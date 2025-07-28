@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    }
+  },
+  "extensions": {
+    "eventHubs": {
+      "batchCheckpointFrequency": 10,  
+      "eventProcessorOptions": {
+        "maxBatchSize": 100,          
+        "prefetchCount": 300,         
+        "partitionOwnershipExpirationInterval": "00:02:00",  
+        "loadBalancingUpdateInterval": "00:00:10"           
+      },
+      "initialOffsetOptions": {
+        "type": "fromEnd",            
+        "enqueuedTimeUtc": ""         
+      }
+    }
+  },
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[4.*, 5.0.0)"
+  }
+}

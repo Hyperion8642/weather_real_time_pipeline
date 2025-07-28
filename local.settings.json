@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+    "AzureEventHubConnection": "Endpoint=sb://weatherstreamingnamespacev1.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=GpihuD2hnQf0PZn+s/91nGbpa5rmEheq5+AEhOvvulM=",
+    "SQLConnectionString": "Driver={ODBC Driver 18 for SQL Server};Server=tcp:weather-db-server.database.windows.net,1433;Database=weather_proj_db;Uid=WeatherProjData;Pwd=Wpdta6768;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+  }
+}
