@@ -14,12 +14,12 @@ save_to_sql_blueprint = func.Blueprint()
 
 @save_to_sql_blueprint.event_hub_message_trigger(arg_name="myhub", event_hub_name="weatherstreamingeventhub",
                                                  connection="WeatherAPIFuncEHConnectStr") 
-def save_to_sql(azeventhub: func.EventHubEvent):
+def save_to_sql(myhub: func.EventHubEvent):
     logging.info('Triggered by Event Hub')
 
     try:
         # message = azeventhub.get_body().decode('utf-8')
-        data = json.loads(azeventhub.get_body().decode('utf-8'))  # Ensure EventHub is sending JSON
+        data = json.loads(myhub.get_body().decode('utf-8'))  # Ensure EventHub is sending JSON
 
         # SQL connection info from environment vars or app settings
         server = os.environ['weather-db-server.database.windows.net']  # e.g., weather-db-server.database.windows.net
