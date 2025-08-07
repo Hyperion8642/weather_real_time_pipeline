@@ -3,11 +3,13 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
-azure.eventhub
-azure.identity
-azure.keyvault.secrets
-# For connecting to SQL pipeline: 
-pyodbc
-os
-json
-logging
+requests
+# azure.eventhub
+# azure.identity
+# azure.keyvault.secrets
+# # For connecting to SQL pipeline: 
+# pyodbc
+# os
+# json
+# logging
+

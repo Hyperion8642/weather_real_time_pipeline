@@ -8,23 +8,25 @@
       }
     }
   },
-  "extensions": {
-    "eventHubs": {
-      "batchCheckpointFrequency": 10,  
-      "eventProcessorOptions": {
-        "maxBatchSize": 100,          
-        "prefetchCount": 300,         
-        "partitionOwnershipExpirationInterval": "00:02:00",  
-        "loadBalancingUpdateInterval": "00:00:10"           
-      },
-      "initialOffsetOptions": {
-        "type": "fromEnd",            
-        "enqueuedTimeUtc": ""         
-      }
-    }
-  },
   "extensionBundle": {
     "id": "Microsoft.Azure.Functions.ExtensionBundle",
     "version": "[4.*, 5.0.0)"
-  }
+  },
+  "extensions": {
+        "eventHubs": {
+            "maxEventBatchSize" : 100,                                 
+            "batchCheckpointFrequency" : 1,
+            "prefetchCount" : 300,
+            "transportType" : "amqpWebSockets",                               
+            "initialOffsetOptions" : {
+                "type" : "fromStart",
+                "enqueuedTimeUtc" : ""
+            },
+            "clientRetryOptions":{
+                "mode" : "exponential",
+                "tryTimeout" : "00:01:00",
+                "delay" : "00:00:00.80"               
+            }
+        }
+    }
 }
